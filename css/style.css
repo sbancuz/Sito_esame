@@ -64,7 +64,7 @@ a:hover {
   /*color: #333;*/
   text-shadow: none;
   /* Prevent inheritance from `body` */
-  background-color: #fff;
+  background-color: #333;
   /*border: .05rem solid #fff;*/
 }
 

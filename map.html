@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+
+  <script src="https://www.amcharts.com/lib/4/core.js"></script>
+  <script src="https://www.amcharts.com/lib/4/charts.js"></script>
+  <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+  <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+  <script src="https://www.amcharts.com/lib/4/themes/animated.js"></script>
+
+  <link rel="stylesheet" href="./css/style.css">
+
+  <title>Amcharts example</title>
+  <link rel="icon" type="image/png" href="img/batteryfav.png">
+
+  <style>
+    .carousel-item img {
+      height: calc(100vh - 132px);
+      width: 100vw;
+      margin: auto;
+      object-fit: cover;
+    }
+
+    .container {
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .bar1,
+    .bar2,
+    .bar3 {
+      width: 35px;
+      height: 5px;
+      background-color: #333;
+      margin: 6px 0;
+      transition: 0.4s;
+    }
+
+    .change .bar1 {
+      -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+      transform: rotate(-45deg) translate(-9px, 6px);
+    }
+
+    .change .bar2 {
+      opacity: 0;
+    }
+
+    .change .bar3 {
+      -webkit-transform: rotate(45deg) translate(-8px, -8px);
+      transform: rotate(45deg) translate(-8px, -8px);
+    }
+
+    html,
+    body {
+      height: 100%;
+      background-color: #333;
+    }
+
+    body {
+      display: -ms-flexbox;
+      display: flex;
+      color: #fff;
+      text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+      box-shadow: inset 0 0 10rem rgba(0, 0, 0, .5);
+    }
+
+    .cover-container {
+      max-width: 42em;
+    }
+
+    .text-box {
+      box-shadow: 30px -20px #FBB117;
+
+    }
+  </style>
+</head>
+
+<body class="text-center" style="height:100%;">
+  <div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
+
+    <header class="masthead mb-auto">
+      <div class="inner">
+
+        <div>
+          <h3 class="masthead-brand" style="margin-left: 25vw;">World monitor</h3>
+          <img src="./img/battery.png" class="img">
+        </div>
+        <nav class="nav nav-masthead justify-content-center">
+
+          <div class="d-flex flex-grow-1" style="margin-right: 25vw;">
+
+            <a class="nav-link" href="index.html">Home</a>
+            <a class="nav-link active" href="map.html">Map</a>
+            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="tabella.php">Table</a>
+            <!--<div class="container" onclick="myFunction(this)">
+                      <div class="bar1"></div>
+                      <div class="bar2"></div>
+                      <div class="bar3"></div>-->
+          </div>
+
+        </nav>
+      </div>
+    </header>
+
+    <div class="d-flex  w-75 h-75 mx-auto flex-column">
+      <script src="./js/map.js"></script>
+      <div id="chartdiv" style="width:100%;height:100%" class="text-box"></div>
+    </div>
+    <!-- Footer -->
+    <footer class="mastfoot mt-auto">
+      <!-- Copyright -->
+      <div class="inner">
+        <!--TODO-->
+        <h5>A cura di <a href="https://github.com/lbanca01?tab=stars">Luca Bancale</a></h5>
+      </div>
+      <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+    <script>
+      function myFunction(x) {
+        x.classList.toggle("change");
+      }
+    </script>
+  </div>
+
+
+</body>
+
+</html>
